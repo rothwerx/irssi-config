@@ -104,7 +104,8 @@ channels = (
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#systemd"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#xfs"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#clusterlabs"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#clusterlabs"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#packer-tool"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -280,10 +281,17 @@ settings = {
   "fe-common/core" = { theme = "solarized-universal"; };
 };
 ignores = (
-  { level = "JOINS PARTS QUITS MODES"; channels = ( "#xfs" ); },
-  { level = "JOINS PARTS QUITS MODES"; channels = ( "#systemd" ); },
-  { 
-    level = "JOINS PARTS QUITS MODES";
+  {
+    level = "JOINS PARTS QUITS MODES NICKS";
+    channels = ( "#packer-tool" );
+  },
+  {
+    level = "JOINS PARTS QUITS MODES NICKS";
+    channels = ( "#systemd" );
+  },
+  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#xfs" ); },
+  {
+    level = "JOINS PARTS QUITS MODES NICKS";
     channels = ( "#clusterlabs" );
   }
 );
